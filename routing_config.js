@@ -24,7 +24,7 @@ const config = [
 function createRouter() {
     const router = express.Router()
     config.forEach(({from, to}) => {
-        router.get(from, (req, res, next) => {
+        router.get(from, (req, _, next) => {
             req.url = to
             next()
         })
